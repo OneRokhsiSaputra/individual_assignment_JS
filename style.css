@@ -1,0 +1,211 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    box-sizing: border-box;
+    font-family: "poppins", sans-serif;
+}
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    background-color: #efeef5;
+}
+.container {
+    position: relative;
+    width: 600px;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #F0FFFF;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #000ff0;
+}
+.container .heading {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    border-bottom: 1px solid #eee; 
+}
+.tasks-wrapper {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20;
+    height: 300px;
+    overflow: auto;
+}
+.tasks-wrapper .delete {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: 20px;
+    bottom: 220px;
+    color: #bdbdbd;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #eee;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: none;
+    border-radius: 50%;
+}
+.tasks-wrapper .delete:hover {
+    color: #f00;
+    border-color: #f00;
+}
+.tasks-wrapper .delete.show {
+    display: flex;
+}
+.add-wrapper {
+    width: 100%;
+    padding: 20px;
+    background-color: #00FFFF;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #f00;
+}
+.add-wrapper .details {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+.add-wrapper .details input {
+    font-weight: 500;
+    margin-bottom: 10px;
+    background-color: #7FFFD4;
+}
+.add-wrapper .details textarea {
+    height: 100px;
+    background-color: #7FFFD4;
+}
+.add-wrapper .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.task {
+    display: flex;
+    gap: 20px;
+    padding: 0 10px 20px 10px;
+    border-bottom: 1px solid #eee;
+}
+.task .radio {
+    position: relative;
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-top: 5px;
+    border: 1px solid #00FF00;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 5px #00FF00;
+}
+.task .radio .icon {
+    color: #fff;
+    font-size: 16px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+.task.selected .radio {
+    background-color: #000ff0;
+}
+.task.selected .radio .icon {
+    opacity: 1;
+}
+.task .right {
+    flex-grow: 1;
+}
+.task .title {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+}
+.task .description {
+    font-size: 14px;
+    color: #333;
+}
+.task .info {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-size: 12px;
+    color: #8a8d9b;
+    margin-top: 10px;
+}
+.task .info.expired {
+    color: #f00;
+}
+.task .info .dot {
+    font-size: 5px;
+    color: #ddd;
+}
+.footer .info {
+    font-size: 12px;
+    color: #080808;
+    display: flex;
+    gap: 20;
+}
+.footer .info label {
+    position: relative;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10;
+    cursor: pointer;
+    text-transform: capitalize;
+    border: 1px solid #eee;
+    box-shadow: 0 0 10px #eee;
+}
+.footer .info input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+.footer .info input::-webkit-calendar-picker-indicator {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    cursor: pointer;
+    height: auto;
+    width: auto;
+    background-color: transparent;
+    color: transparent;
+}
+.footer .btn {
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #fff;
+    text-transform: capitalize;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.footer .btn.clear {
+    color: #fff;
+    border: 1px solid #eee;
+    background-color: #f00;
+    box-shadow: 0 0 10px #eee;
+}
+.footer .btn.add {
+    border: 1px solid #eee;
+    box-shadow: 0 0 10px #eee;
+    background-color: #1d05f1;
+}
